@@ -23,7 +23,7 @@
 | margin          | 요소 바깥 여백 지정     | 10px auto, 0 20px |
 | padding         | 요소 안쪽 여백 지정     | 10px 5px          |
 | color           | 글자 색상               | #333, rgba(0,0,0,0.5) |
-| font-size       | 글자 크기               | 16px, 1.5        |
+| font-size       | 글자 크기               | 16px,             |
 | background-color| 배경 색상               | #fff, #eee        |
 | position        | 위치 지정               | static, fixed, absolute |
 | top             | 위치의 위쪽 좌표 지정   | 10px, 5%          |
