@@ -13,8 +13,9 @@
 
 <img src="https://github.com/user-attachments/assets/c8c23494-e1cc-4314-8716-4d36e0ed4017" width="600" />  
 <img src="https://github.com/user-attachments/assets/c15fae24-dc38-41ba-9bca-6a7948620243" width="600" />
-![image](https://github.com/user-attachments/assets/12c98fd7-de3f-4e7d-9f90-1c75e8e583e5)
-![image](https://github.com/user-attachments/assets/5ce4ccd4-cba0-40c5-af18-ef2b3f57fa85)
+<img src="https://github.com/user-attachments/assets/12c98fd7-de3f-4e7d-9f90-1c75e8e583e5" width="600" />
+<img src="https://github.com/user-attachments/assets/5ce4ccd4-cba0-40c5-af18-ef2b3f57fa85" width="600" />
+
 
 | 속성명           | 설명                    | 예시 값           |
 |-----------------|-------------------------|------------------|
