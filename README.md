@@ -36,3 +36,23 @@
 | z-index         | 겹침 순서              | 2, 10             |
 | font-weight     | 글자 굵기              | 400, bold         |
 | display         | 박스 모델 타입          | inline-block, block |
+
+
+### login.html
+
+<img src="https://github.com/user-attachments/assets/435e9632-a089-4431-8e81-4e9fe7a77a72" width="600" />
+| 코드                                                     | 설명                                                |
+| ------------------------------------------------------ | ------------------------------------------------- |
+| `<!DOCTYPE html>`                                      | HTML5 문서임을 선언합니다.                                 |
+| `<html>`, `<head>`, `<body>`                           | 웹페이지의 구조를 이루는 기본적인 태그입니다.                         |
+| `<title>Login</title>`                                 | 브라우저 탭에 표시될 제목입니다.                                |
+| `<link rel="stylesheet" href="...">`                   | 외부 CSS 파일(`style.css`)을 불러와 페이지에 스타일을 적용합니다.      |
+| `<div class="signup-box">`                             | 페이지 상단에 표시되는 회원가입 유도 문구입니다.                       |
+| `<a href="/signup" class="signup-link">회원가입</a>`       | 회원가입 페이지(`/signup`)로 이동하는 하이퍼링크입니다.               |
+| `<div class="background-title">Rani.Ko's Server</div>` | 페이지 제목처럼 보이는 텍스트입니다. 디자인상 큰 텍스트나 배경용으로 쓰일 수 있습니다. |
+| `<div class="login-container">`                        | 로그인 폼 전체를 감싸는 박스입니다. 스타일 적용을 위해 사용됩니다.            |
+| `<h2>Login</h2>`                                       | 로그인 박스의 제목입니다.                                    |
+| `<form action="/login" method="post">`                 | 로그인 정보를 `/login` 경로로 POST 방식으로 전송합니다.             |
+| `<input type="text" ...>`                              | 사용자명(아이디)을 입력하는 필드입니다.                            |
+| `<input type="password" ...>`                          | 비밀번호를 입력하는 필드입니다.                                 |
+| `<button type="submit">Log in</button>`                | 로그인 버튼을 눌러 폼을 제출합니다.                              |
