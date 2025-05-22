@@ -42,15 +42,17 @@
 
 <img src="https://github.com/user-attachments/assets/268a9aef-41b9-487e-9619-37da8264e653" width="600" />
 
-| 코드                                              | 설명                   | 코드                                            | 설명              |
-| ----------------------------------------------- | -------------------- | --------------------------------------------- | --------------- |
-| `<!DOCTYPE html>`                               | HTML 문서의 시작을 나타냄     | `<html>`, `<head>`, `<body>`                  | 기본 HTML 구조를 구성함 |
-| `<title>...</title>`                            | 브라우저 탭 제목 설정         | `<link rel="stylesheet" href="...">`          | 외부 CSS 연결       |
-| `<div class="background-title">...</div>`       | 페이지 상단 타이틀 영역        | `<div class="...">...</div>`                  | 콘텐츠를 감싸는 컨테이너   |
-| `<h2>...</h2>`                                  | 섹션 제목 표시             | `<form action="..." method="post">...</form>` | 사용자 입력 폼 전송 구조  |
-| `<input type="text" ...>`                       | 사용자 이름 입력 필드         | `<input type="email" ...>`                    | 이메일 입력 필드       |
-| `<input type="tel" ...>`                        | 전화번호 입력 필드           | `<input type="password" ...>`                 | 비밀번호 입력 필드      |
-| `<input type="password" name="confirm" ...>`    | 비밀번호 확인 입력 필드        | `<button type="submit">...</button>`          | 폼 제출 버튼         |
-| `<a href="/signup" class="signup-link">...</a>` | 회원가입 페이지 링크          | `<p id="errorMsg">...</p>`                    | 오류 메시지 표시 영역    |
-| `<script>...</script>`                          | 자바스크립트 코드 블록         | `addEventListener('submit', ...)`             | 폼 제출 시 비밀번호 확인  |
-| `if (pw !== confirm) { ... }`                   | 비밀번호가 일치하지 않으면 오류 표시 | `<form action="/logout" ...>`                 | 로그아웃 폼          |
+| 코드                                                         | 설명                | 코드                                                          | 설명                |
+| ---------------------------------------------------------- | ----------------- | ----------------------------------------------------------- | ----------------- |
+| `<!DOCTYPE html>`                                          | HTML 문서의 시작을 나타냄  | `<html>`, `<head>`, `<body>`                                | 기본 HTML 구조를 구성함   |
+| `<title>...</title>`                                       | 브라우저 탭 제목 설정      | `<link rel="stylesheet" href="...">`                        | 외부 CSS 연결         |
+| `<div class="background-title">...</div>`                  | 페이지 상단 타이틀 영역     | `<div class="...">...</div>`                                | 콘텐츠를 감싸는 컨테이너     |
+| `<h2>...</h2>`                                             | 섹션 제목 표시          | `<form action="..." method="post">...</form>`               | 사용자 입력 폼 전송 구조    |
+| `<input type="text" ...>`                                  | 사용자 이름 입력 필드      | `<input type="email" ...>`                                  | 이메일 입력 필드         |
+| `<input type="tel" ...>`                                   | 전화번호 입력 필드        | `<input type="password" ...>`                               | 비밀번호 입력 필드        |
+| `<input type="password" name="confirm" ...>`               | 비밀번호 확인 입력 필드     | `<button type="submit">...</button>`                        | 폼 제출 버튼           |
+| `<a href="/signup" class="signup-link">...</a>`            | 회원가입 페이지 링크       | `<p id="errorMsg">...</p>`                                  | 오류 메시지 표시 영역      |
+| `<script>...</script>`                                     | 자바스크립트 코드 블록      | `addEventListener('submit', ...)`                           | 폼 제출 시 실행할 동작 등록  |
+| `const pw = document.getElementById('password').value;`    | 비밀번호 입력값 가져오기     | `const confirm = document.getElementById('confirm').value;` | 확인용 비밀번호 입력값 가져오기 |
+| `if (pw !== confirm) { ... }`                              | 비밀번호가 서로 다를 경우 실행 | `e.preventDefault();`                                       | 폼 전송을 중단함 (오류 방지) |
+| `document.getElementById('errorMsg').textContent = "...";` | 오류 메시지를 사용자에게 보여줌 | `<form action="/logout" method="post">...</form>`           | 로그아웃을 위한 폼        |
