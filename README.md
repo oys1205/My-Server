@@ -59,3 +59,70 @@
 | `const pw = document.getElementById('password').value;`    | 비밀번호 입력값 가져오기     | `const confirm = document.getElementById('confirm').value;` | 확인용 비밀번호 입력값 가져오기 |
 | `if (pw !== confirm) { ... }`                              | 비밀번호가 서로 다를 경우 실행 | `e.preventDefault();`                                       | 폼 전송을 중단함 (오류 방지) |
 | `document.getElementById('errorMsg').textContent = "...";` | 오류 메시지를 사용자에게 보여줌 | `<form action="/logout" method="post">...</form>`           | 로그아웃을 위한 폼        |
+
+### main.py
+
+<img src="https://github.com/user-attachments/assets/9654c01a-08a0-47a2-9546-636d989650b3" width="600" />
+<img src="https://github.com/user-attachments/assets/f858f16e-fc9f-4e4c-ae1f-debd2d318942" width="600" />
+<img src="https://github.com/user-attachments/assets/81056e45-8896-4d2c-b7e2-356773a8c7bb" width="600" />
+
+FastAPI + MySQL 백엔드 코드
+
+| 코드                                                                     | 설명                                        |
+| ---------------------------------------------------------------------- | ----------------------------------------- |
+| `import mysql.connector`                                               | MySQL 데이터베이스와 연결하기 위한 모듈 임포트              |
+| `from fastapi import FastAPI, Request, Form`                           | FastAPI의 핵심 기능 및 요청 객체, 폼 데이터를 사용하기 위한 모듈 |
+| `from fastapi.responses import HTMLResponse, RedirectResponse`         | HTML 템플릿 응답과 리다이렉트 응답을 위한 클래스             |
+| `from fastapi.templating import Jinja2Templates`                       | Jinja2 템플릿 엔진을 FastAPI에서 사용하기 위한 모듈       |
+| `from fastapi.staticfiles import StaticFiles`                          | 정적 파일(CSS, JS 등)을 서빙하기 위한 모듈              |
+| `app = FastAPI()`                                                      | FastAPI 인스턴스를 생성하여 앱 초기화                  |
+| `app.mount("/static", StaticFiles(directory="static"), name="static")` | `/static` 경로로 정적 파일을 서빙 (static 폴더 사용)    |
+| `templates = Jinja2Templates(directory="templates")`                   | HTML 템플릿을 저장한 디렉터리 설정 (templates 폴더 사용)   |
+
+데이터베이스 연결 함수
+
+| 코드                             | 설명                                       |
+| ------------------------------ | ---------------------------------------- |
+| `def get_db_connection():`     | 데이터베이스 연결을 위한 함수 정의                      |
+| `mysql.connector.connect(...)` | MySQL 서버에 연결 (호스트, 포트, 유저, 비밀번호, DB명 지정) |
+
+라우팅: HTML 페이지 렌더링
+
+| 코드                                                             | 설명                                |
+| -------------------------------------------------------------- | --------------------------------- |
+| `@app.get("/")`                                                | 루트 경로(`/`) 접속 시 로그인 페이지 반환        |
+| `@app.get("/signup")`                                          | `/signup` 경로 접속 시 회원가입 페이지 반환     |
+| `@app.get("/welcome")`                                         | `/welcome` 접속 시 환영 페이지 반환         |
+| `templates.TemplateResponse("파일명.html", {"request": request})` | 해당 HTML 파일을 템플릿으로 렌더링해서 클라이언트에 응답 |
+
+회원가입 처리 로직
+
+| 코드                                        | 설명                          |
+| ----------------------------------------- | --------------------------- |
+| `@app.post("/signup")`                    | 회원가입 폼 제출 시 처리              |
+| `username: str = Form(...)`               | 폼에서 입력받은 데이터를 각각 변수에 저장     |
+| `if password != confirm:`                 | 비밀번호와 비밀번호 확인 값이 일치하는지 확인   |
+| `cursor.execute("SELECT ...")`            | 동일한 username이 이미 존재하는지 검사   |
+| `cursor.fetchone()`                       | 검사 결과 중 한 행만 가져옴 (중복 여부 확인) |
+| `cursor.execute("INSERT INTO users ...")` | 새로운 사용자 정보를 users 테이블에 저장   |
+| `db.commit()`                             | DB에 변경 사항 커밋 (실제 저장)        |
+| `cursor.close(), db.close()`              | DB 연결 해제                    |
+
+로그인 처리 로직
+
+| 코드                                                  | 설명                              |
+| --------------------------------------------------- | ------------------------------- |
+| `@app.post("/login")`                               | 로그인 폼 제출 시 처리                   |
+| `cursor.execute("SELECT ...")`                      | 입력된 사용자 정보로 DB 조회               |
+| `if user:`                                          | 일치하는 유저가 있으면 로그인 성공             |
+| `RedirectResponse(url="/welcome", status_code=302)` | 로그인 성공 시 환영 페이지로 리다이렉트          |
+| `else: return templates.TemplateResponse(...)`      | 로그인 실패 시 에러 메시지와 함께 로그인 페이지 재출력 |
+
+로그아웃 처리
+
+| 코드                                                | 설명                          |
+| ------------------------------------------------- | --------------------------- |
+| `@app.post("/logout")`                            | 로그아웃 요청 처리                  |
+| `RedirectResponse(url="/login", status_code=302)` | 로그인 페이지로 리다이렉트              |
+| `response.delete_cookie("session")`               | 'session' 쿠키 삭제하여 로그인 상태 해제 |
+
