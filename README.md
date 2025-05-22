@@ -42,21 +42,15 @@
 
 <img src="https://github.com/user-attachments/assets/268a9aef-41b9-487e-9619-37da8264e653" width="600" />
 
-| 코드                                                                               | 설명            | 코드                                                                        | 설명            |
-| -------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------- | ------------- |
-| `<!DOCTYPE html>`                                                                | HTML5 문서임을 알림 | `<html>`                                                                  | HTML 문서의 시작   |
-| `<head>`                                                                         | 문서의 메타 정보 포함  | `<title>Login</title>`                                                    | 브라우저 탭 제목     |
-| `<link rel="stylesheet" href="/static/style.css">`                               | 외부 CSS 파일 연결  | `<body>`                                                                  | 페이지 본문 시작     |
-| `<div class="background-title">Rani.Ko's Server</div>`                           | 상단 제목 표시      | `<div class="login-container">`                                           | 로그인 폼 감싸는 박스  |
-| `<h2>Login</h2>`                                                                 | 로그인 폼 제목      | `<form action="/login" method="post">`                                    | 로그인 데이터 전송 폼  |
-| `<input type="text" name="username" placeholder="Username" required>`            | 사용자 이름 입력창    | `<input type="password" name="password" placeholder="Password" required>` | 비밀번호 입력창      |
-| `<button type="submit">Log in</button>`                                          | 로그인 버튼        | `<div class="signup-box">`                                                | 회원가입 유도 문구 박스 |
-| `<a href="/signup" class="signup-link">회원가입</a>`                                 | 회원가입 페이지 링크   | `<form id="signupForm" method="post" action="/signup">`                   | 회원가입 데이터 전송 폼 |
-| `<input type="email" name="email" placeholder="Email" required>`                 | 이메일 입력창       | `<input type="tel" name="telephone" placeholder="Telephone" required>`    | 전화번호 입력창      |
-| `<input type="password" name="confirm" placeholder="Confirm Password" required>` | 비밀번호 확인 입력창   | `<p id="errorMsg" style="color:red;"></p>`                                | 오류 메시지 표시 영역  |
-| `<script>`                                                                       | 자바스크립트 시작     | `addEventListener('submit', function(e) {...}`                            | 비밀번호 일치 여부 검사 |
-| `<div class="signup-container">`                                                 | 회원가입 폼 감싸는 박스 | `<div class="welcome-title">Welcome to Rani's Server</div>`               | 환영 메시지 제목     |
-| `<div class="menu-container">`                                                   | 메뉴 버튼 감싸는 박스  | `<h2>Menu</h2>`                                                           | 메뉴 제목         |
-| `<form>`                                                                         | 버튼 그룹 폼       | `<button type="submit">About us</button>`                                 | About us 버튼   |
-| `<button type="submit">Rani.Ko</button>`                                         | 본인 정보 버튼      | `<form action="/logout" method="post">`                                   | 로그아웃 처리 폼     |
-| `<button type="submit">Log out</button>`                                         | 로그아웃 버튼       |                                                                           |               |
+| 코드                                              | 설명                   | 코드                                            | 설명              |
+| ----------------------------------------------- | -------------------- | --------------------------------------------- | --------------- |
+| `<!DOCTYPE html>`                               | HTML 문서의 시작을 나타냄     | `<html>`, `<head>`, `<body>`                  | 기본 HTML 구조를 구성함 |
+| `<title>...</title>`                            | 브라우저 탭 제목 설정         | `<link rel="stylesheet" href="...">`          | 외부 CSS 연결       |
+| `<div class="background-title">...</div>`       | 페이지 상단 타이틀 영역        | `<div class="...">...</div>`                  | 콘텐츠를 감싸는 컨테이너   |
+| `<h2>...</h2>`                                  | 섹션 제목 표시             | `<form action="..." method="post">...</form>` | 사용자 입력 폼 전송 구조  |
+| `<input type="text" ...>`                       | 사용자 이름 입력 필드         | `<input type="email" ...>`                    | 이메일 입력 필드       |
+| `<input type="tel" ...>`                        | 전화번호 입력 필드           | `<input type="password" ...>`                 | 비밀번호 입력 필드      |
+| `<input type="password" name="confirm" ...>`    | 비밀번호 확인 입력 필드        | `<button type="submit">...</button>`          | 폼 제출 버튼         |
+| `<a href="/signup" class="signup-link">...</a>` | 회원가입 페이지 링크          | `<p id="errorMsg">...</p>`                    | 오류 메시지 표시 영역    |
+| `<script>...</script>`                          | 자바스크립트 코드 블록         | `addEventListener('submit', ...)`             | 폼 제출 시 비밀번호 확인  |
+| `if (pw !== confirm) { ... }`                   | 비밀번호가 일치하지 않으면 오류 표시 | `<form action="/logout" ...>`                 | 로그아웃 폼          |
