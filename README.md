@@ -41,18 +41,19 @@
 ### login.html
 
 <img src="https://github.com/user-attachments/assets/435e9632-a089-4431-8e81-4e9fe7a77a72" width="600" />
-| 코드 | 설명 |
-|------|------|
-| `<!DOCTYPE html>` | HTML5 문서임을 선언합니다. |
-| `<html>`, `<head>`, `<body>` | 웹페이지의 구조를 이루는 기본적인 태그입니다. |
-| `<title>Login</title>` | 브라우저 탭에 표시될 제목입니다. |
-| `<link rel="stylesheet" href="...">` | 외부 CSS 파일(`style.css`)을 불러와 스타일을 적용합니다. |
-| `<div class="signup-box">` | 회원가입 유도 문구를 담는 박스입니다. |
-| `<a href="/signup" class="signup-link">회원가입</a>` | `/signup` 페이지로 이동하는 하이퍼링크입니다. |
-| `<div class="background-title">Rani.Ko's Server</div>` | 큰 제목 또는 배경 타이틀 용도의 텍스트입니다. |
-| `<div class="login-container">` | 로그인 폼 전체를 감싸는 컨테이너입니다. |
-| `<h2>Login</h2>` | 로그인 폼의 제목입니다. |
-| `<form action="/login" method="post">` | POST 방식으로 로그인 정보를 `/login` 경로로 전송합니다. |
-| `<input type="text" ...>` | 사용자 이름을 입력받는 필드입니다. |
-| `<input type="password" ...>` | 비밀번호를 입력받는 필드입니다. |
-| `<button type="submit">Log in</button>` | 폼을 서버로 제출하는 로그인 버튼입니다. |
+| 코드                             | 설명 |
+|----------------------------------|------|
+| `<!DOCTYPE html>`                | HTML5 문서임을 선언합니다. |
+| `<html>`, `<head>`, `<body>`     | 웹페이지의 기본 구조입니다. |
+| `<title>Login</title>`          | 브라우저 탭에 표시될 제목입니다. |
+| `<link rel="stylesheet" href="...">` | 외부 CSS 파일을 불러옵니다. |
+| `<div class="signup-box">`      | 회원가입 유도 문구를 담은 박스입니다. |
+| `<a href="/signup" class="signup-link">회원가입</a>` | 회원가입 페이지로 이동하는 링크입니다. |
+| `<div class="background-title">Rani.Ko's Server</div>` | 상단 타이틀을 표시합니다. |
+| `<div class="login-container">` | 로그인 박스를 감싸는 컨테이너입니다. |
+| `<h2>Login</h2>`                | 로그인 폼의 제목입니다. |
+| `<form action="/login" method="post">` | 로그인 정보를 전송하는 폼입니다. |
+| `<input type="text" ...>`       | 사용자 이름 입력 필드입니다. |
+| `<input type="password" ...>`   | 비밀번호 입력 필드입니다. |
+| `<button type="submit">Log in</button>` | 로그인 제출 버튼입니다. |
+
