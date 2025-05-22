@@ -41,6 +41,7 @@
 ### login.html
 
 <img src="https://github.com/user-attachments/assets/435e9632-a089-4431-8e81-4e9fe7a77a72" width="600" />
+
 | 코드                             | 설명 |
 |----------------------------------|------|
 | `<!DOCTYPE html>`                | HTML5 문서임을 선언합니다. |
